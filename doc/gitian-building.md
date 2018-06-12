@@ -437,10 +437,10 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 cd /some/root/path/
 git clone https://github.com/bitcoin/bitcoin-detached-sigs.git
 
-BTCPATH=/some/root/path/bitcoin.git
+PTCPATH=/some/root/path/bitcoin.git
 SIGPATH=/some/root/path/bitcoin-detached-sigs.git
 
-./bin/gbuild --url bitcoin=${BTCPATH},signature=${SIGPATH} ../bitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+./bin/gbuild --url bitcoin=${PTCPATH},signature=${SIGPATH} ../bitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
 ```
 
 Signing externally
