@@ -77,7 +77,7 @@ public:
         consensus.nMajorityWindow = 1000;
         consensus.BIP34Height = 227931;
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
-        consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 2 * 60; // 1 minute
         consensus.nPowTargetSpacing = 2 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -98,7 +98,7 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xc9;
+        pchMessageStart[0] = 0xe9;
         pchMessageStart[1] = 0xde;
         pchMessageStart[2] = 0xf4;
         pchMessageStart[3] = 0xe9;
@@ -107,14 +107,14 @@ public:
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        uint32_t nTime = 1528819200;
-        uint32_t nNonce = 59871515;
+        uint32_t nTime = 1528824600;
+        uint32_t nNonce = 62376046;
         uint32_t nBits = 504365040;
         int32_t nVersion = 1;
         const CAmount& genesisReward = 50 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         consensus.hashGenesisBlock = genesis.GetHash();
-        if(genesis.GetHash() != uint256S("0x"))
+        /**if(genesis.GetHash() != uint256S("0x"))
         {
             bool fNegative;
             bool fOverflow;
@@ -141,9 +141,9 @@ public:
             printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
             printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
             printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        }
-        //assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        }*/
+        assert(consensus.hashGenesisBlock == uint256S("0x00000fa79b56997b3087d4bab875bc7d96b506328ac075977b5b0015fbe279e1"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
 
         vSeeds.push_back(CDNSSeedData("seed1", "seed1.perfectcoininfo.com"));
         vSeeds.push_back(CDNSSeedData("seed2", "seed2.perfectcoininfo.com"));
@@ -167,12 +167,12 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x")),
+            ( 0, uint256S("0x00000fa79b56997b3087d4bab875bc7d96b506328ac075977b5b0015fbe279e1")),
 
-            0, //1397080064, // * UNIX timestamp of last checkpoint block
-            0 ,//36544669,   // * total number of transactions between genesis and last checkpoint
+            1528824600, //1397080064, // * UNIX timestamp of last checkpoint block
+            1 ,//36544669,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            0, //60000.0     // * estimated number of transactions per day after checkpoint
+            2000, //60000.0     // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -208,7 +208,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1493596800; // May 1st, 2017
 
         pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xc1;
+        pchMessageStart[1] = 0xb1;
         pchMessageStart[2] = 0xd9;
         pchMessageStart[3] = 0x27;
         vAlertPubKey = ParseHex("04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a");
@@ -216,9 +216,9 @@ public:
         nMaxTipAge = 0x7fffffff;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1528820200, 426128225, 504365040, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528824660, 430409130, 504365040, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        if (genesis.GetHash() != uint256S("0x"))
+        /**if (genesis.GetHash() != uint256S("0x"))
         {
             bool fNegative;
             bool fOverflow;
@@ -245,9 +245,9 @@ public:
             printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
             printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
             printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        }
-        //assert(consensus.hashGenesisBlock == uint256S("0x000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        }*/
+        assert(consensus.hashGenesisBlock == uint256S("0x00000acda89aa50d6dba74c74bfa6df4b1beb89124d47da40beef54b3664537e"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -271,8 +271,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x")),
-            0,//1337966069,
+            ( 0, uint256S("0x00000acda89aa50d6dba74c74bfa6df4b1beb89124d47da40beef54b3664537e")),
+            1528824660,//1337966069,
             0,//1488,
             30,//00
         };
@@ -309,16 +309,16 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 999999999999ULL;
 
         pchMessageStart[0] = 0xca;
-        pchMessageStart[1] = 0xff;
+        pchMessageStart[1] = 0xef;
         pchMessageStart[2] = 0xc5;
         pchMessageStart[3] = 0xda;
         nMaxTipAge = 24 * 60 * 60;
         nDefaultPort = 5444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1528821200, 4, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528824680, 504365044, 545259519, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        if(genesis.GetHash() != uint256S("0x"))
+        /**if(genesis.GetHash() != uint256S("0x"))
         {
             bool fNegative;
             bool fOverflow;
@@ -345,10 +345,10 @@ public:
             printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
             printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
             printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        }
+        }*/
 
-        //assert(consensus.hashGenesisBlock == uint256S("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x69ea637b18bfa703c4629c53cc804e4b984829a93ad10dc894ee2bdd9962c746"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
@@ -361,7 +361,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x")),
+            ( 0, uint256S("0x69ea637b18bfa703c4629c53cc804e4b984829a93ad10dc894ee2bdd9962c746")),
             0,
             0,
             0
