@@ -184,7 +184,7 @@ void Shutdown()
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    RenameThread("bitcoin-shutoff");
+    RenameThread("perfectcoin-shutoff");
     mempool.AddTransactionsUpdated(1);
 
     StopHTTPRPC();
@@ -600,7 +600,7 @@ void CleanupBlockRevFiles()
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
     const CChainParams& chainparams = Params();
-    RenameThread("bitcoin-loadblk");
+    RenameThread("perfectcoin-loadblk");
     // -reindex
     if (fReindex) {
         CImportingNow imp;
@@ -780,7 +780,7 @@ void InitLogging()
     LogPrintf("PerfectCoin version %s (%s)\n", FormatFullVersion(), CLIENT_DATE);
 }
 
-/** Initialize bitcoin.
+/** Initialize perfectcoin.
  *  @pre Parameters should be parsed and config file should be read.
  */
 bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
