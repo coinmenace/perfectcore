@@ -648,7 +648,7 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>perfectcoin-core</name>
     <message>
         <source>Options:</source>
         <translation>Možnosti:</translation>
