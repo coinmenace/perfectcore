@@ -20,6 +20,7 @@
 #include <QFileOpenEvent>
 #include <QTemporaryFile>
 
+/**
 X509 *parse_b64der_cert(const char* cert_data)
 {
     std::vector<unsigned char> data = DecodeBase64(cert_data);
@@ -209,3 +210,4 @@ void RecipientCatcher::getRecipient(SendCoinsRecipient r)
 {
     recipient = r;
 }
+*/

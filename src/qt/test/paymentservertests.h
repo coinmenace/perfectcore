@@ -9,7 +9,7 @@
 
 #include <QObject>
 #include <QTest>
-
+/**
 class PaymentServerTests : public QObject
 {
     Q_OBJECT
@@ -31,5 +31,5 @@ public Q_SLOTS:
 public:
     SendCoinsRecipient recipient;
 };
-
+*/
 #endif // BITCOIN_QT_TEST_PAYMENTSERVERTESTS_H

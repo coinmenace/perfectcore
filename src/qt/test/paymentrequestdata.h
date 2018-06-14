@@ -15,6 +15,7 @@
 // Subject: CN=PaymentRequest Test CA
 // Not Valid After : Dec  8 16:37:24 2022 GMT
 //
+/**
 const char* caCert1_BASE64 =
 "\
 MIIB0DCCATmgAwIBAgIJAI75TJGxEsCoMA0GCSqGSIb3DQEBCwUAMCExHzAdBgNV\
@@ -458,3 +459,4 @@ iEBFUrBDJZU+UEezGwr7/zoECjo5ZY3PmtZcM2sILNjyweJF6XVzGqTxUw6pN6sW\
 XR2T3Gy2LzRvhVA25QgGqpz0/juS2BtmNbsZPkN9gMMwKimgzc+PuCzmEKwPK9cQ\
 YQ==\
 ";
+*/
