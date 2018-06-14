@@ -222,7 +222,7 @@ UniValue setgenerate(const UniValue& params, bool fHelp)
 
     mapArgs["-gen"] = (fGenerate ? "1" : "0");
     mapArgs ["-genproclimit"] = itostr(nGenProcLimit);
-    GenerateBitcoins(fGenerate, nGenProcLimit, Params());
+    GeneratePerfectCoins(fGenerate, nGenProcLimit, Params());
 
     return NullUniValue;
 }

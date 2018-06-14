@@ -195,7 +195,7 @@ void Shutdown()
     if (pwalletMain)
         pwalletMain->Flush(false);
 #endif
-    GenerateBitcoins(false, 0, Params());
+    GeneratePerfectCoins(false, 0, Params());
     StopNode();
     StopTorControl();
     UnregisterNodeSignals(GetNodeSignals());
@@ -1659,7 +1659,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
     // --- end disabled ---
 
     // Generate coins in the background
-    GenerateBitcoins(GetBoolArg("-gen", DEFAULT_GENERATE), GetArg("-genproclimit", DEFAULT_GENERATE_THREADS), chainparams);
+    GeneratePerfectCoins(GetBoolArg("-gen", DEFAULT_GENERATE), GetArg("-genproclimit", DEFAULT_GENERATE_THREADS), chainparams);
 
     // ********************************************************* Step 12: finished
 
