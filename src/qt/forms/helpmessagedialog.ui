@@ -55,7 +55,7 @@
         </size>
        </property>
        <property name="pixmap">
-        <pixmap resource="../bitcoin.qrc">:/icons/perfectcoin</pixmap>
+        <pixmap resource="../perfectcoin.qrc">:/icons/perfectcoin</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -161,7 +161,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../bitcoin.qrc"/>
+  <include location="../perfectcoin.qrc"/>
  </resources>
  <connections>
   <connection>
