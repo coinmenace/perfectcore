@@ -108,7 +108,7 @@ public:
         nPruneAfterHeight = 100000;
 
         uint32_t nTime = 1528966387;
-        uint32_t nNonce = 62376046;
+        uint32_t nNonce = 62390461;
         uint32_t nBits = 504365040;
         int32_t nVersion = 1;
         const CAmount& genesisReward = 50 * COIN;
@@ -142,8 +142,8 @@ public:
             printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
             printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
         }/***/
-        //assert(consensus.hashGenesisBlock == uint256S("0x00000fa79b56997b3087d4bab875bc7d96b506328ac075977b5b0015fbe279e1"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000c862c7fdc0c4af8230e2058edf05892815a8961162a389339cb07bf7942"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
 
         vSeeds.push_back(CDNSSeedData("seed1", "seed1.perfectcoininfo.com"));
         vSeeds.push_back(CDNSSeedData("seed2", "seed2.perfectcoininfo.com"));
@@ -165,15 +165,15 @@ public:
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        /**checkpointData = (CCheckpointData) {
+        checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
-                        ( 0, uint256S("0x00000fa79b56997b3087d4bab875bc7d96b506328ac075977b5b0015fbe279e1")),
+                        ( 0, uint256S("0x00000c862c7fdc0c4af8230e2058edf05892815a8961162a389339cb07bf7942")),
 
-                1528824600, //1397080064, // * UNIX timestamp of last checkpoint block
+                1528966387, //1397080064, // * UNIX timestamp of last checkpoint block
                 1 ,//36544669,   // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
                 2000, //60000.0     // * estimated number of transactions per day after checkpoint
-        };*/
+        };
     }
 };
 static CMainParams mainParams;
@@ -216,7 +216,7 @@ public:
         nMaxTipAge = 0x7fffffff;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1528966497, 430409130, 504365040, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528966497, 430463630, 504365040, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         /***/if (genesis.GetHash() != uint256S("0x"))
         {
@@ -246,8 +246,8 @@ public:
             printf("Mainnet block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
             printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
         }
-        //assert(consensus.hashGenesisBlock == uint256S("0x00000acda89aa50d6dba74c74bfa6df4b1beb89124d47da40beef54b3664537e"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000007d8255edd0d8bebd8dbde7de7016ae1afa5b18d8318e0828009b14d974c"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -269,13 +269,13 @@ public:
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
 
-        /**checkpointData = (CCheckpointData) {
+        /***/checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
-                        ( 0, uint256S("0x00000acda89aa50d6dba74c74bfa6df4b1beb89124d47da40beef54b3664537e")),
+                        ( 0, uint256S("0x000007d8255edd0d8bebd8dbde7de7016ae1afa5b18d8318e0828009b14d974c")),
                 1528824660,//1337966069,
                 0,//1488,
                 30,//00
-        };*/
+        };
 
     }
 };
@@ -316,7 +316,7 @@ public:
         nDefaultPort = 5444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1528966587, 504365044, 545259519, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1528966587, 62390462, 545259519, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         /***/if(genesis.GetHash() != uint256S("0x"))
         {
@@ -347,8 +347,8 @@ public:
             printf("Mainnet block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
         }
 
-        //assert(consensus.hashGenesisBlock == uint256S("0x69ea637b18bfa703c4629c53cc804e4b984829a93ad10dc894ee2bdd9962c746"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
+        assert(consensus.hashGenesisBlock == uint256S("0x5c26f91a6e9279a36d61d2f37c5a14e2ac96754034acf95364d8b7c18cbc16ac"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2704f7954e6469c2587e2a228b681226ea18a49059246585196cfb76defe8d0f"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
@@ -359,13 +359,13 @@ public:
         fMineBlocksOnDemand = true;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        /**checkpointData = (CCheckpointData){
+        checkpointData = (CCheckpointData){
                 boost::assign::map_list_of
-                        ( 0, uint256S("0x69ea637b18bfa703c4629c53cc804e4b984829a93ad10dc894ee2bdd9962c746")),
+                        ( 0, uint256S("0x5c26f91a6e9279a36d61d2f37c5a14e2ac96754034acf95364d8b7c18cbc16ac")),
                 0,
                 0,
                 0
-        };*/
+        };
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
