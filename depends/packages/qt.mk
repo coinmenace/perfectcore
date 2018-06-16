@@ -1,6 +1,6 @@
 PACKAGE=qt
 $(package)_version=5.5.0
-$(package)_download_path=http://download.qt.io/official_releases/qt/5.5/$($(package)_version)/submodules
+$(package)_download_path=http://download.qt.io/archive/qt/5.5/$($(package)_version)/submodules
 $(package)_suffix=opensource-src-$($(package)_version).tar.gz
 $(package)_file_name=qtbase-$($(package)_suffix)
 $(package)_sha256_hash=7e82b1318f88e56a2a9376e069aa608d4fd96b48cb0e1b880ae658b0a1af0561
@@ -49,7 +49,7 @@ $(package)_config_opts += -no-sql-sqlite2
 $(package)_config_opts += -prefix $(host_prefix)
 $(package)_config_opts += -hostprefix $(build_prefix)
 $(package)_config_opts += -bindir $(build_prefix)/bin
-$(package)_config_opts += -no-c++11
+$(package)_config_opts += -c++11
 $(package)_config_opts += -openssl-linked
 $(package)_config_opts += -v
 $(package)_config_opts += -static
