@@ -136,6 +136,11 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
         bnNew = UintToArith256(params.powLimit);
     }
 
+
+    LogPrintf("GetNextWorkRequired RETARGET  Dark Gravity Wave 3\n");
+    LogPrintf("params.nPowTargetTimespan = %d    nActualTimespan = %d\n", params.nPowTargetTimespan, nActualTimespan);
+    LogPrintf("Before: %08x  %s\n", BlockLastSolved->nBits, BlockLastSolved->ToString());
+    LogPrintf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.ToString());
     return bnNew.GetCompact();
 }
 
@@ -145,11 +150,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     // mainnet/regtest share a configuration
     if (Params().NetworkIDString() == CBaseChainParams::MAIN || Params().NetworkIDString() == CBaseChainParams::REGTEST) {
-        if (pindexLast->nHeight + 1 <= 100) retarget = DIFF_BTC;
-        else retarget = DIFF_DGW;
+       // if (pindexLast->nHeight + 1 <= 100) retarget = DIFF_BTC;
+        //else retarget = DIFF_DGW;
+        retarget = DIFF_DGW;
         // testnet -- we want a lot of coins in existance early on
     } else {
-        if (pindexLast->nHeight + 1 >= 100) retarget = DIFF_DGW;
+        if (pindexLast->nHeight + 1 >= 1000) retarget = DIFF_DGW;
         else retarget = DIFF_DGW;
     }
 
